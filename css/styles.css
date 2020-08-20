@@ -158,13 +158,13 @@ img {
 }
 
 /*Button classes*/
-.active {
+.share-container.active {
   opacity:1;
 }
 
-.btn-on {
-  background-color:var(--third-color) !important;
-  color:#f4f4f4 !important;
+.card-body .user .btn.btn-on {
+  background-color:var(--third-color);
+  color:#f4f4f4;
 }
 
 /*Attribution container */

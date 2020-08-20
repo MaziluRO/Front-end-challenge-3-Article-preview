@@ -36,18 +36,21 @@ img {
 .card {
   max-width:860px;
   display:flex;
-  border-radius:15px;
+  border-radius:10px;
   background-color:#fff;
 }
 
+
+
+/*Card*/
 .card-header {
   width:40%;
 }
 
 .card-header img {
   object-fit: cover;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius:15px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius:10px;
 }
 
 
@@ -66,6 +69,8 @@ img {
   font-size:25px;
   font-weight: 700;
   margin-bottom:12px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .card-body p {
@@ -110,23 +115,29 @@ img {
 
 .card-body .user .btn {
   background-color:var(--background-color);
+  color:var(--secondary-color);
   padding:8px 10px;
   border-radius:50%;
   margin-left:auto;
+  z-index:3;
 }
+
+
 
 .share-container {
   display: flex;
   width:250px;
   height:60px;
-  border-radius:15px;
+  border-radius:10px;
   background-color:var(--primary-color);
   align-items:center;
   justify-content:center;
   position:absolute;
   top:-75%;
   right:-29%;
+  opacity:0;
 }
+
 
 .share-container::after {
   content: '';
@@ -146,6 +157,15 @@ img {
   padding:10px;
 }
 
+/*Button classes*/
+.active {
+  opacity:1;
+}
+
+.btn-on {
+  background-color:var(--third-color) !important;
+  color:#f4f4f4 !important;
+}
 
 /*Attribution container */
 .attribution {
@@ -165,8 +185,14 @@ img {
     width:100%; 
   }
 
+  .card-header img {
+    border-top-left-radius: 10px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:unset;
+  }
+
   .card-body {
-    padding:20px 32px 10px 32px;
+    padding:20px 32px 0 32px;
     position:relative;
   }
 
@@ -176,6 +202,12 @@ img {
 
   .card-body .user {
     position:unset;
+    margin-top:10px;
+    height:65px;
+  }
+
+  .card-body .user .share-container h5 {
+    margin-left:7%;
   }
 
   .attribution {
@@ -183,10 +215,16 @@ img {
   }
 
   .share-container {
-    width:100vw;
-    z-index:3;
+    width:100%;
+    justify-content:start;
+    top:auto;
+    left:0;
     bottom:0;
-    right:0;
+    border-radius:0 0 10px 10px;
+  }
+
+  .share-container::after{
+    display:none;
   }
 }
 

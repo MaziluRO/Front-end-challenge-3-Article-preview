@@ -15,6 +15,7 @@
 body {
   font-family: 'Manrope',sans-serif;
   font-size:13px;
+  line-height: 1.5;
   height:100vh;
   background-color: var(--background-color);
   display: flex;
@@ -30,17 +31,17 @@ img {
 
 .container {
   margin:auto;
-  max-width:1100px;
-  border-radius:15px;
-  background-color: teal;
 }
 
 .card {
+  max-width:860px;
   display:flex;
+  border-radius:15px;
+  background-color:#fff;
 }
 
 .card-header {
-  max-width:800px;
+  width:40%;
 }
 
 .card-header img {
@@ -52,23 +53,159 @@ img {
 
 /*Card body*/
 .card-body {
-  padding:16px;
+  width:60%;
+  padding:30px 40px 10px 40px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-body h1 {
+  color:var(--primary-color);
+  font-size:25px;
+  font-weight: 700;
+  margin-bottom:12px;
+}
+
+.card-body p {
+  color:var(--secondary-color);
+  font-size:15px;
+  font-weight:500;
 }
 
 .card-body .user {
   width:100%;
+  height:80px;
+  margin-top:auto;
   display:flex;
   flex-direction: row;
   align-items: center;
-  background-color:coral;
+  position:relative;
+}
+
+.card-body .user .user-info {
+  margin-left:20px;
+}
+
+.card-body .user .user-info h5 {
+  color:var(--primary-color);
+  font-size:13px;
+  font-weight: 700;
+}
+
+.card-body .user .user-info small {
+  color:var(--secondary-color);
+  font-weight:500;
 }
 
 .card-body .user .user-profile-pic {
-  justify-self: start;
+  height:40px;
+  width:40px;
+}
+
+.card-body .user .user-profile-pic img {
+  border-radius:50%;
 }
 
 .card-body .user .btn {
-  background-color:blue;
+  background-color:var(--background-color);
+  padding:8px 10px;
+  border-radius:50%;
+  margin-left:auto;
+}
+
+.share-container {
+  display: flex;
+  width:250px;
+  height:60px;
+  border-radius:15px;
+  background-color:var(--primary-color);
+  align-items:center;
+  justify-content:center;
+  position:absolute;
+  top:-75%;
+  right:-29%;
+}
+
+.share-container::after {
+  content: '';
+  width:20px;
+  height:20px;
+  background-color:var(--primary-color);
+  position:absolute;
+  transform:rotate(45deg);
+  bottom:-10px;
+}
+
+.share-container h5, .share-container a {
+  color:var(--third-color);
+  font-size:13px;
+  font-weight: 500;
+  letter-spacing: 5px;
   padding:10px;
-  justify-self: end;
+}
+
+
+/*Attribution container */
+.attribution {
+  text-align: center;
+}
+
+/*Medias*/
+
+/*Smartphones*/
+@media(max-width:500px) {
+  .card {
+    flex-direction: column;
+    max-width:360px;
+  }
+
+  .card-header, .card-body {
+    width:100%; 
+  }
+
+  .card-body {
+    padding:20px 32px 10px 32px;
+    position:relative;
+  }
+
+  .card-body h1 {
+    font-size:18px;
+  }
+
+  .card-body .user {
+    position:unset;
+  }
+
+  .attribution {
+    font-size:12px;
+  }
+
+  .share-container {
+    width:100vw;
+    z-index:3;
+    bottom:0;
+    right:0;
+  }
+}
+
+/*Tablets*/
+@media(min-width:501px){
+  .card {
+    max-width:700px;
+  }
+
+  .card-body {
+    padding:30px 25px 10px 25px;
+  }
+
+  .card-body h1 {
+    font-size:23px;
+  }
+
+  .card-body p {
+    font-size:14px;
+  }
+
 }
